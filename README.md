@@ -15,9 +15,14 @@ The game is to repeat this process and shoot many rockets.
 The player can control the rocket by flicking the screen or typing arrows on the keyboard. The rocket will not stop until it hits a wall or obstacle. To hit a meteorite it is not enough to pass by, you have to stop just there.
 
 Pressing the Start button will start a time trial to see how many meteorites you can shoot down in one minute. 
+
+## Preview
+![Test Image 1](just_look_up_preview.png)
 ## Inspirations 
 - The concept came from [Don't Look Up](https://www.netflix.com/jp-en/title/81252357). 
-- The puzzle idea is inspired by [Pokémon Gold and Silver / Ice Path](https://strategywiki.org/wiki/Pok%C3%A9mon_Gold_and_Silver/Ice_Path). This is the first Sliding puzzle in my life.
+- The puzzle idea is inspired by [Pokémon Gold and Silver / Ice Path](https://strategywiki.org/wiki/Pok%C3%A9mon_Gold_and_Silver/Ice_Path). This is the first Sliding puzzle in my life. 
+- In the implementation, I referred to [Sample Project](https://github.com/VGVentures/slide_puzzle) by [Very Good Ventures](https://verygood.ventures/). 
+
 ## Dependancies
 - [equatable](https://pub.dev/packages/equatable)
 - [bloc](https://pub.dev/packages/bloc)
