@@ -68,7 +68,8 @@ class _PuzzleResultConfettiState extends State<PuzzleResultConfetti> {
         numberOfParticles: 100,
         gravity: 0.01,
         minimumSize: Size.square(
-            context.watch<PuzzleResponsiveCubit>().state.size.confettiSize / 2),
+            context.watch<PuzzleResponsiveCubit>().state.size.confettiSize *
+                0.8),
         maximumSize: Size.square(
             context.watch<PuzzleResponsiveCubit>().state.size.confettiSize),
         colors: const [
