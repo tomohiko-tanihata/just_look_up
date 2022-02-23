@@ -7,6 +7,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:isolated_worker/isolated_worker.dart';
 import 'package:isolated_worker/js_isolated_worker.dart';
+import 'package:just_look_up/core/constants.dart';
 import 'package:just_look_up/model/direction.dart';
 import 'package:just_look_up/model/position.dart';
 import 'package:just_look_up/services/apis.dart';
@@ -47,7 +48,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
       final puzzle = generatePuzzle(<String, int>{
         'start_x': state.currentPosition.x,
         'start_y': state.currentPosition.y,
-        'min_depth': min(5 + state.score, 15),
+        'min_depth': min(minPuzzleDepth + state.score, maxPuzzleDepth),
       });
       obstacles = puzzle['obstacles']! as List<Position>;
       goalPosition = puzzle['goal_position'] as Position;
@@ -77,7 +78,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
           arguments: <String, int>{
             'start_x': state.goalPosition.x,
             'start_y': state.goalPosition.y,
-            'min_depth': min(5 + state.score + 1, 15),
+            'min_depth': min(minPuzzleDepth + state.score + 1, maxPuzzleDepth),
           },
         ) as String;
         final map = jsonDecode(puzzle) as Map<String, dynamic>;
@@ -100,7 +101,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
       IsolatedWorker().run(generatePuzzle, <String, int>{
         'start_x': state.goalPosition.x,
         'start_y': state.goalPosition.y,
-        'min_depth': min(5 + state.score + 1, 15),
+        'min_depth': min(minPuzzleDepth + state.score + 1, maxPuzzleDepth),
       }).then((puzzle) {
         _nextObstacles = puzzle['obstacles']! as List<Position>;
         _nextGoalPosition = puzzle['goal_position'] as Position;

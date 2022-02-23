@@ -41,4 +41,7 @@ class PuzzleDesktopSize extends PuzzleSize {
 
   @override
   double get scorePaddingWidth => 32;
+
+  @override
+  double get confettiSize => 16;
 }

@@ -29,6 +29,8 @@ abstract class PuzzleSize {
 
   double get scorePaddingWidth;
 
+  double get confettiSize;
+
   double get titleHeight => boardDimension / 2;
 
   double get tileDimension =>

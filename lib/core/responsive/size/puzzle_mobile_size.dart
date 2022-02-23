@@ -41,4 +41,7 @@ class PuzzleMobileSize extends PuzzleSize {
 
   @override
   double get scorePaddingWidth => 16;
+
+  @override
+  double get confettiSize => 12;
 }
